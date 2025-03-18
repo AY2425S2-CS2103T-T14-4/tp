@@ -62,7 +62,7 @@ public class TotalCommandTest {
     }
 
     @Test
-    void execute_NullModel_throwsNullPointerException() {
+    void execute_nullModel_throwsNullPointerException() {
         Model model = null;
         TotalCommand totalCommand = new TotalCommand();
         assertThrows(NullPointerException.class, () -> totalCommand.execute(model));
