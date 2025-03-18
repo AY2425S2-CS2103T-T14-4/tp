@@ -39,6 +39,5 @@ public class TotalCommand extends Command {
         } catch (RuntimeException e) {
             throw new CommandException(e.getMessage());
         }
-
     }
 }
