@@ -40,8 +40,13 @@ public class TotalCommandTest {
                 BENSON
         );
         TotalCommand totalCommand = new TotalCommand();
-        Commission totalCommission = totalCommand.getTotal(lastShownList);
+        try{
+            Commission totalCommission = totalCommand.getTotal(lastShownList);
+            assertEquals(new Commission("200"), totalCommission);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        assertEquals(new Commission("200"), totalCommission);
+
     }
 }

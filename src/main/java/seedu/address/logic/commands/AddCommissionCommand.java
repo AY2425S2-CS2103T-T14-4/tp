@@ -54,7 +54,12 @@ public class AddCommissionCommand extends Command {
 
         Person personToAddCommission = lastShownList.get(index.getZeroBased());
         Commission commissionToBeAdded = personToAddCommission.getCommission();
-        Commission addedCommission = commissionToBeAdded.addValue(commission);
+        Commission addedCommission;
+        try{
+            addedCommission= commissionToBeAdded.addValue(commission);
+        } catch (RuntimeException e){
+            throw new CommandException(e.getMessage());
+        }
         Person commissionedPerson = personToAddCommission.setCommission(addedCommission);
         model.setPerson(personToAddCommission, commissionedPerson);
 

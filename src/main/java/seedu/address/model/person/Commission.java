@@ -3,6 +3,8 @@ package seedu.address.model.person;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+import seedu.address.model.person.exceptions.CommissionLimitExceededException;
+
 /**
  * Represents a Person's commission in the address book.
  */
@@ -54,6 +56,9 @@ public class Commission {
      */
     public Commission addValue(Commission commission) {
         int value = this.getIntegerValue() + commission.getIntegerValue();
+        if (value >= 1e9) {
+            throw new CommissionLimitExceededException();
+        }
         String commissionValue = getStringValue(value);
         return new Commission(commissionValue);
     }
