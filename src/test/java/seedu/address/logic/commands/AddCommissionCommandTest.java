@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_COMMISSION_HUNDRED;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MAX_COMMISSION;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -16,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
@@ -106,6 +108,13 @@ public class AddCommissionCommandTest {
                 .toString();
 
         assertEquals(expectedString, command.toString());
+    }
 
+    @Test
+    public void addCommission_overflow() {
+        Index validIndex = Index.fromOneBased(1);
+        Commission validCommission = new Commission(VALID_MAX_COMMISSION);
+        AddCommissionCommand addCommissionCommand = new AddCommissionCommand(validIndex, validCommission);
+        assertThrows(CommandException.class, () -> addCommissionCommand.execute(model));
     }
 }
