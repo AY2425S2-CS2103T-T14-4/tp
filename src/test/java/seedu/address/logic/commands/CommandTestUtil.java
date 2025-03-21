@@ -40,6 +40,7 @@ public class CommandTestUtil {
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
     public static final String VALID_COMMISSION_HUNDRED = "100";
+    public static final String VALID_MAX_COMMISSION = "999999999";
 
     public static final String INVALID_TAG_HUBBY = "hubby*"; // '*' not allowed in tags
 

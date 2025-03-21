@@ -57,7 +57,11 @@ public class TypicalPersons {
             .withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)
             .withCommission("493").withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
             .build();
-
+    // Manually added
+    public static final Person JOSH = new PersonBuilder().withName("Josh Doug").withPhone("99118242")
+            .withEmail("josh@example.com").withCommission("900000000").withAddress("Neighbor").build();
+    public static final Person KEN = new PersonBuilder().withName("Ken Douglas").withPhone("911")
+            .withEmail("ken@example.com").withCommission("999999999").withAddress("Chicago").build();
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
 
     private TypicalPersons() {} // prevents instantiation
