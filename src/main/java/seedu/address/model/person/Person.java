@@ -25,6 +25,7 @@ public class Person {
     private final Commission commission;
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private Remark remark;
 
     /**
      * Every field must be present and not null.

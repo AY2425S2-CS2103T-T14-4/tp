@@ -14,4 +14,5 @@ public class CliSyntax {
     public static final Prefix PREFIX_COMMISSION = new Prefix("c/");
     public static final Prefix PREFIX_SORT = new Prefix("s/");
     public static final Prefix PREFIX_ATTRIBUTE = new Prefix("a/");
+    public static final Prefix PREFIX_REMARK = new Prefix("r/");
 }
