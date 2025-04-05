@@ -23,7 +23,7 @@ public class AddCommissionCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a commission to the person identified "
             + "by the index number used in the displayed person list.\n"
-            + "Parameters: INDEX (must be a positive integer) not exceeding 1000000"
+            + "Parameters: INDEX (must be a positive integer) not exceeding 1000000\n"
             + "[" + PREFIX_COMMISSION + "COMMISSION]\n"
             + "Example: " + COMMAND_WORD + " 2 "
             + PREFIX_COMMISSION + "12";
